@@ -1,0 +1,110 @@
+body {
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: 0.4s;
+}
+
+/* DARK MODE */
+body.dark {
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+  color: white;
+}
+
+/* LIGHT MODE */
+body.light {
+  background: linear-gradient(135deg, #e0e0e0, #ffffff);
+  color: black;
+}
+
+/* Container */
+.container {
+  padding: 25px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Different container styles */
+body.dark .container {
+  background: rgba(255,255,255,0.05);
+}
+
+body.light .container {
+  background: rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s;
+}
+
+/* Input focus */
+input:focus, select:focus {
+  outline: none;
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(0,255,150,0.5);
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Calculate button */
+button:not(.theme-btn) {
+  background: linear-gradient(45deg, #00c853, #64dd17);
+  color: white;
+}
+
+button:not(.theme-btn):hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,255,150,0.4);
+}
+
+/* Theme button */
+.theme-btn {
+  background: #555;
+  color: white;
+}
+
+.theme-btn:hover {
+  background: #777;
+}
+
+/* Result */
+.result {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
